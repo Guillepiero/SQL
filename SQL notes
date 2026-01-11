@@ -1,0 +1,15 @@
+SELECT: El comando select sirve para pedir a una base de datos que te devuelva una parte x.                              Nombre      Edad    Ciudad
+        select * from database ---> Devuelve todo el database                                                          --------------------------------
+        select edad from database ---> devuelve la columna edad                                                           Juan Pérez  30      Madrid
+                                                                                                                          Ana García  25      Barcelona
+WHERE:  Se usa para filtrar y va al final y el filtro va entre comillas y respeta mayus                                   Luis Soler  30      Valencia
+        select * from database where edad = "30" ---> devolvera la tabla donde la edad sea 30                             
+    
+COUNT:  Devueve el numero de filas del dato solicitado y lo que queremos contar va entre parentesis.
+        select count (edad) from database ---> devuelve el numero de filas en la columna edad en este caso 3
+
+DISTINCT: Al usar este argumento pedimos que no se repitan datos y lo que queremos filtrar va a continuacion de distinct
+          select distinct edad from database ---> devuelve 30 y 25
+
+LIMIT:    Se usa para pedir una cierta cantidad de datos limitado, y va al final de todo.
+          select * from database limit 2 ---> solo devolvera las 2 primeras filas
