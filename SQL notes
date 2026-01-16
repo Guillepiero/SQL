@@ -20,8 +20,9 @@ ALTER:    Can be used to add or remove columns from a table, to modify the data 
           ADD column_name data_type;
 
 All the entries are initially assigned the value NULL. You can then use UPDATE statements to add the necessary column values. Ej:
-          ALTER TABLE author 
-          ADD telephone_number BIGINT;
+          UPDATE table_name 
+          SET column1 = value1, column2 = value2, ...
+          WHERE condition;
 
 
 MODIFY:   The data presented may be in a different format than required. In such a case, we need to modify the data_type of the column.
