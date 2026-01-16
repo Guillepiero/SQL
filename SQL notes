@@ -19,7 +19,14 @@ ALTER:    Can be used to add or remove columns from a table, to modify the data 
           ALTER TABLE table_name
           ADD column_name data_type;
 
-All the entries are initially assigned the value NULL. You can then use UPDATE statements to add the necessary column values. Ej:
+All the entries are initially assigned the value NULL. You can then use INSERT statements to add the necessary column values.
+          INSERT INTO table_name (column1, column2, ...)
+          VALUES
+                (value1_row1, value2_row1, ...),
+                (value1_row2, value2_row2, ...),
+                (value1_row3, value2_row3, ...);
+
+And then to modify the info with UPDATE.
           UPDATE table_name 
           SET column1 = value1, column2 = value2, ...
           WHERE condition;
