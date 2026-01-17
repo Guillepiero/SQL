@@ -97,5 +97,26 @@ HAVING:   Se usa para limitar el output obtenido, al usar esta clausula solo se 
 
 
 
+SUM:      Suma los valores de la columna deseada.  
+          SELECT SUM(Columna) FROM Tabla;
+
+
+MAX:      Da el valor mas alto de la columna, asi mismo MIN el mas bajo.
+          SELECT MAX(Columna) FROM Tabla;
+
+
+ROUND:    Redondea el valor, le puedo agregar el numero de decimales al cual quiero redondear.
+          SELECT ROUND(Columna) FROM Tabla;
+          SELECT ROUND(Columna, 2) FROM Tabla;
+
+
+LENGTH:   Se usa para saber la longitud de lo escrito en una columna.
+          SELECT LENGTH(Columna) FROM Tabla;
+
+
+
+UCASE:    Se usa para convertir todos los caracteres a mayus, mientras que LCASE los convierte a minus.
+          SELECT UCASE(Columna) FROM Tabla;
+
 
 
