@@ -50,5 +50,52 @@ DROP:     Elimina una tabla:
           DROP TABLE TableName;
 
 
+LIKE:     Se utiliza para buscar en una columna un dato no consiso, por ejemplo si queremos ver los items de la columna 1 cuyo dato en la columna 3 contiene una palabra:
+          SELECT Columna_1                                 Al usar % antes y despues de la palabra o letra buscada nos dara todos los items que contengan esa palabra
+          FROM Tabla                                       o letra en cualquier parte del item. En cambio si pongo el % en un solo lado es por que no se esa
+          WHERE Columna_2 LIKE '%palabra%';                parte de la palabra (%alabra) para cuando no se como inicia, (palabr%) para cuando no se como termina.
+                                                           Ejemplo: 199% nos da todos los items entre 1990 y 1999.
+
+
+BETWEEN:  Se usa para filtrar parametros entre dos valores especificos:
+          SELECT *
+          FROM Tabla
+          WHERE (Columna1 BETWEEN Valor AND Valor)
+
+
+ORDER BY: Se usa para ordenar las filas segun el valor que querramos (por default los ordena en orden creciente).
+          SELECT Columna_1, Columna_2, Columna_3            Nos muestra la columna 1 y 2 ordenadas segun el valor de la columna 2 de maneraa creciente.
+          FROM Tabla                                        Se agrega el termino DESC luego de Columna para que el orden sea descendiente (Columna_2 DESC)
+          ORDER BY Columna_2, Columna_3;                    Si al filtrar segun una columna tengo varios valores repetidos puedo agregar otra clausala para
+                                                            que los valores se filtren primero segun el valor de una columna y luego segun el valor de la segunda
+
+
+GROUP BY: Se usa para ver las filas de una columna sin valores repetidos, pero a diferencia de DISTINCT esta clausula guarda el numero de veces que se repitio ese valor.
+          SELECT Columna_1, COUNT(*)                        Por lo tanto se suele usar con la clausula COUNT para ver cuantas el numero de veces que aparece ese valor junto a 
+          FROM Tabla                                        columna deseada. En otras palabras la conbinacion de GROUP BY y COUNT basicamente se usa para agurpar los items
+          GROUP BY Columna_1;                               de una columna deseada y ver el conteo de las repeticiones.
+
+
+AVG:      Se usa para obtener el promedio de un grupo, por lo que siempre se usa con el GROUP BY. En el ejemplo se obtendra la Columna_1 sin repeticiones y en la Columna 2
+          SELECT Columna_1, AVG(Columna_2)                 se vera el promedio de los valores de Columna_2 que se agruparon segun el valor de la Columna_1
+          FROM Tabla
+          GROUP BY Columna_1;
+
+
+
+AS:       Se utiliza para renombrar una columna asi cuando se la visualice sea mas facil su interpretacion. En el ejemplo vemos como se asigna nombres reales a las columnas
+          SELECT Columna_1, COUNT(*) AS "Conteo_de_Columna_1", AVG(Columna_2) AS "AVG_de_Columna_2"         que se obtendran por medio de la clausala COUNT y AVG, las cuales
+          FROM Tabla                                                                                        normalmente tendrian como nombre "COUNT(*)" y "AVG(Columna_2)"
+          GROUP BY Columna_1;
+
+
+
+HAVING:   Se usa para limitar el output obtenido, al usar esta clausula solo se observaran las filas que cumplan el HAVING. En el ejemplo se vera la columna 1 y 2,
+          SELECT Columna_1, Columna_2                                                    pero solamente veremos las filas cuyo valor de la columna 2 sea menor a x.
+          FROM Tabla
+          HAVING Columna_2 < x
+
+
+
 
 
