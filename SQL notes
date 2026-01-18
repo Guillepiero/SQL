@@ -120,3 +120,27 @@ UCASE:    Se usa para convertir todos los caracteres a mayus, mientras que LCASE
 
 
 
+DAY:      Obtiene el dia de una columna que contenga una fecha en el formato correcto. MONTH y YEAR funcionan de la misma manera.
+          SELECT DAY(Columna) FROM Tabla;
+
+
+
+DATE_ADD: Se usa para sumar a una fecha una cantidad elegida de tiempo. En el ejemplo a la fecha de la columna 1 le sumamos x dias y veremos la nueva fecha.
+          SELECT DATE_ADD(Columna, INTERVAL x DAY) FROM Tabla                                            Si usamos DATE_SUB le restaremos tiempo a la fecha.
+
+
+
+
+
+DATEDIFF: Se usa para obtener la diferencia en tiempo entre dos fechas. Al usar CURRENT_DATE pediremos la diferencia entre una fecha y el presente.
+          SELECT DATEDIFF(CURRENT_DATE, Columna) FROM Tabla                Normalmente el resultado obtenido es la cantidad de dias.
+
+
+
+FROM_DAYS: Se usa para convertir una catidad de dias en el formato de YYYY-MM-DD. Por ejemplo con DATEDIFF se obtienen dias y con esta clausula lo conierto a su 
+          SELECT FROM_DAYS(DATEDIFF(CURRENT_DATE, Columna)) FROM Tabla                                                          equivalente en anios meses y dias.
+
+
+
+
+
